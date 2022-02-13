@@ -28,6 +28,12 @@ const SideMenu = props => {
     animation-name: ${SideMenuAnimation};
     animation-duration: 8s;
     animation-iteration-count: infinite;
+    @media (max-width: 1044px) {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+      }
     `
         :
         styled.div`
@@ -37,6 +43,12 @@ const SideMenu = props => {
     transition: width 2s;
     font-size: 1.5em;
     color: white;
+    @media (max-width: 1044px) {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+      }
     `;
 
     const ExpandOrShrinkButton = styled.button`
@@ -48,6 +60,9 @@ const SideMenu = props => {
     &:hover {
         cursor: pointer;
       }
+    @media (max-width: 1044px) {
+        display:none;
+      }
     `;
 
     const SideMenuList = styled.ul`
@@ -56,6 +71,11 @@ const SideMenu = props => {
     color: white;
     margin: 0px;
     padding: 15px;
+    @media (max-width: 1044px) {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+      }
     `;
 
     const SideMenuListElement = styled.li`
