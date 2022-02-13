@@ -28,7 +28,7 @@ const SideMenu = props => {
     animation-name: ${SideMenuAnimation};
     animation-duration: 8s;
     animation-iteration-count: infinite;
-    @media (max-width: 1044px) {
+    @media (max-width: 1085px) {
         width: 100%;
         height: 40px;
         display: flex;
@@ -43,7 +43,7 @@ const SideMenu = props => {
     transition: width 2s;
     font-size: 1.5em;
     color: white;
-    @media (max-width: 1044px) {
+    @media (max-width: 1085px) {
         width: 100%;
         height: 40px;
         display: flex;
@@ -60,7 +60,7 @@ const SideMenu = props => {
     &:hover {
         cursor: pointer;
       }
-    @media (max-width: 1044px) {
+    @media (max-width: 1085px) {
         display:none;
       }
     `;
@@ -71,7 +71,7 @@ const SideMenu = props => {
     color: white;
     margin: 0px;
     padding: 15px;
-    @media (max-width: 1044px) {
+    @media (max-width: 1085px) {
         display: flex;
         justify-content: space-between;
         width: 80%;

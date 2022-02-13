@@ -9,7 +9,7 @@ const LayoutContainer = styled.div`
 display: flex;
 height: 100%;
 width: 100%;
-@media (max-width: 1044px) {
+@media (max-width: 1085px) {
     flex-direction: column;
   }
 `;
