@@ -80,6 +80,7 @@ const ContentPanel = (props) => {
     return <Panel onClick={props.onClick}>
         <Header>
             <HeaderLogoContainer>
+                {IsMobile ? "mobilni" : "komp"}
                 <Link to="/">
                     <HeaderLogo src={RioDiaLogo}></HeaderLogo>
                 </Link>
@@ -100,6 +101,7 @@ const ContentPanel = (props) => {
 const mapStateToProps = (state) => {
     return {
         Sitemap: state.layout.Sitemap,
+        IsMobile: state.layout.IsMobile,
     };
 };
 
