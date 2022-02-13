@@ -1,4 +1,4 @@
 export {
-    loadSitemap
+    detectDeviceType, loadSitemap
 } from "./layoutActions";
 

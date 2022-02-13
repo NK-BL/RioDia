@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
-import { isMobile } from "react-device-detect";
 import { FaListUl, FaOutdent } from "react-icons/fa";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -10,6 +9,8 @@ import * as actions from "../../../state/actions/index";
 
 const SideMenu = props => {
     const [expanded, setExpanded] = useState(true);
+
+    const isMobile = props.IsMobile;
 
     const SideMenuAnimation = keyframes`
     0% { width: 50px; }
@@ -52,7 +53,19 @@ const SideMenu = props => {
     color: white;
     `;
 
-    const ExpandOrShrinkButton = isMobile ? "" : styled.button`
+    const ExpandOrShrinkButton = isMobile ?
+        styled.button`
+    background-color: transparent;
+    color: white;
+    border: 0px;
+    width: 100%;
+    font-size: 1.5em;
+    &:hover {
+        cursor: pointer;
+      }
+    display: none
+    `
+        : styled.button`
     background-color: transparent;
     color: white;
     border: 0px;
@@ -68,10 +81,9 @@ const SideMenu = props => {
     list-style-type: none;
     color: white;
     margin: 0px;
-    padding: 15px;
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     ` : styled.ul`
     appearance: none;
     list-style-type: none;
@@ -118,7 +130,8 @@ const SideMenu = props => {
 
 const mapStateToProps = (state) => {
     return {
-        Sitemap: state.layout.Sitemap
+        Sitemap: state.layout.Sitemap,
+        IsMobile: state.layout.IsMobile
     };
 };
 

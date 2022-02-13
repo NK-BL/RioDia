@@ -1,1 +1,2 @@
 export const LOAD_SITEMAP = "LOAD_SITEMAP";
+export const DETECT_DEVICE_TYPE = "DETECT_DEVICE_TYPE";

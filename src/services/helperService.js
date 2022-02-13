@@ -19,11 +19,16 @@ export const updateObject = (oldObject, updatedValues) => {
   };
 };
 
+export const detectMobileDevice = () => {
+  return window.innerWidth < window.innerHeight;
+}
+
 const obj = {
   isFunction,
   isObject,
   isBoolean,
   updateObject,
+  detectMobileDevice
 };
 
 export default obj;

@@ -1,12 +1,17 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { isMobile } from "react-device-detect";
 import { connect } from "react-redux";
 import * as actions from "../../../state/actions/index";
 import ContentPanel from "../ContentPanel/ContentPanel";
 import SideMenu from "../SideMenu/SideMenu";
 
-const LayoutContainer = isMobile ? styled.div`
+const Layout = props => {
+
+    props.LoadSitemap();
+
+    var isMobile = props.IsMobile
+
+    const LayoutContainer = isMobile ? styled.div`
 display: flex;
 height: 100%;
 width: 100%;
@@ -17,9 +22,6 @@ height: 100%;
 width: 100%;
 `;
 
-const Layout = props => {
-
-    props.LoadSitemap();
 
     return (
         <LayoutContainer>
@@ -32,6 +34,7 @@ const Layout = props => {
 const mapStateToProps = (state) => {
     return {
         Sitemap: state.layout.Sitemap,
+        IsMobile: state.layout.IsMobile,
     };
 };
 
@@ -39,6 +42,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         LoadSitemap: () =>
             dispatch(actions.loadSitemap()),
+        DetectDeviceType: () =>
+            dispatch(actions.detectDeviceType()),
     };
 };
 

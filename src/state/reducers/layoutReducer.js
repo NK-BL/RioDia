@@ -4,6 +4,7 @@ import * as actionType from "../actionTypes/actionTypes";
 
 const initialState = {
     Sitemap: [],
+    IsMobile: window.innerWidth < window.innerHeight
 };
 
 const layoutReducer = (state = initialState, action = "") => {
@@ -12,6 +13,12 @@ const layoutReducer = (state = initialState, action = "") => {
         case actionType.LOAD_SITEMAP:
             return updateObject(state, {
                 Sitemap: services.sitemapService.loadSitemap(),
+            });
+
+        case actionType.DETECT_DEVICE_TYPE:
+            console.log("ridjuser detekt dt");
+            return updateObject(state, {
+                IsMobile: services.helperService.detectMobileDevice,
             });
 
         default:

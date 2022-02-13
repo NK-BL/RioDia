@@ -5,3 +5,9 @@ export const loadSitemap = () => {
     type: actionType.LOAD_SITEMAP,
   };
 };
+
+export const detectDeviceType = () => {
+  return {
+    type: actionType.DETECT_DEVICE_TYPE,
+  };
+};
