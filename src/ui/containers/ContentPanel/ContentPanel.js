@@ -1,10 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { connect } from "react-redux";
-import { Link, Route, Routes } from "react-router-dom";
-import AirBNBLogo from "../../../assets/logo/airbnb.png";
-import BookingLogo from "../../../assets/logo/booking.png";
-import RioDiaLogo from "../../../assets/logo/RioDia.png";
+import { Route, Routes } from "react-router-dom";
 import ContactPage from "../Pages/ContactPage";
 import GalleryPage from "../Pages/GalleryPage";
 import HomePage from "../Pages/HomePage";
@@ -81,7 +78,7 @@ const ContentPanel = (props) => {
         <Header>
             <HeaderLogoContainer>
                 {props.IsMobile ? "mobilni" : "komp"}
-                <Link to="/">
+                {/* <Link to="/">
                     <HeaderLogo src={RioDiaLogo}></HeaderLogo>
                 </Link>
                 <BookingAndAirbnbContainer>
@@ -91,7 +88,7 @@ const ContentPanel = (props) => {
                     <a target="_blank" rel="noreferrer" href="https://www.airbnb.com/rooms/49947504?source_impression_id=p3_1644697293_Z3sHT8CPvdeOc%2FPo" title="Airbnb">
                         <HeaderLogo src={AirBNBLogo}></HeaderLogo>
                     </a>
-                </BookingAndAirbnbContainer>
+                </BookingAndAirbnbContainer> */}
             </HeaderLogoContainer>
         </Header>
         {getRoutes()}
