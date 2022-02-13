@@ -21,13 +21,13 @@ display: flex;
 align-items: center;
 `;
 
-const HeaderLogo = styled.img`
-padding-left: 10px;
-height: 35px;
-&:hover {
-    transform: scale(1.2);
-  }
-`;
+// const HeaderLogo = styled.img`
+// padding-left: 10px;
+// height: 35px;
+// &:hover {
+//     transform: scale(1.2);
+//   }
+// `;
 
 const HeaderLogoContainer = styled.div`
     display: flex;
@@ -36,9 +36,9 @@ const HeaderLogoContainer = styled.div`
     justify-content: space-between;
 `;
 
-const BookingAndAirbnbContainer = styled.span`
-display: flex;
-`;
+// const BookingAndAirbnbContainer = styled.span`
+// display: flex;
+// `;
 
 const ContentPanel = (props) => {
     const getRoutes = () => {
