@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
+import { isMobile } from "react-device-detect";
 import { connect } from "react-redux";
 import { Link, Route, Routes } from "react-router-dom";
 import AirBNBLogo from "../../../assets/logo/airbnb.png";
@@ -80,6 +81,7 @@ const ContentPanel = (props) => {
     return <Panel onClick={props.onClick}>
         <Header>
             <HeaderLogoContainer>
+                {isMobile ? "jeste mobilni" : "nije mobilni"}
                 <Link to="/">
                     <HeaderLogo src={RioDiaLogo}></HeaderLogo>
                 </Link>
