@@ -80,7 +80,7 @@ const ContentPanel = (props) => {
     return <Panel onClick={props.onClick}>
         <Header>
             <HeaderLogoContainer>
-                {IsMobile ? "mobilni" : "komp"}
+                {props.IsMobile ? "mobilni" : "komp"}
                 <Link to="/">
                     <HeaderLogo src={RioDiaLogo}></HeaderLogo>
                 </Link>
