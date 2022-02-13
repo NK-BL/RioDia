@@ -1,17 +1,20 @@
 import styled from "@emotion/styled";
 import React from "react";
+import { isMobile } from "react-device-detect";
 import { connect } from "react-redux";
 import * as actions from "../../../state/actions/index";
 import ContentPanel from "../ContentPanel/ContentPanel";
 import SideMenu from "../SideMenu/SideMenu";
 
-const LayoutContainer = styled.div`
+const LayoutContainer = isMobile ? styled.div`
 display: flex;
 height: 100%;
 width: 100%;
-@media (max-width: 1085px) {
-    flex-direction: column;
-  }
+flex-direction: column;
+` : styled.div`
+display: flex;
+height: 100%;
+width: 100%;
 `;
 
 const Layout = props => {

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
+import { isMobile } from "react-device-detect";
 import { FaListUl, FaOutdent } from "react-icons/fa";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -18,7 +19,19 @@ const SideMenu = props => {
     100% { width: 250px; opacity: 1; }
    `;
 
-    const SideMenuContainer = expanded ? styled.div`
+    const SideMenuContainer = expanded ? (isMobile ? styled.div`
+    background-color: #5a8d96;
+    transition: width 2s;
+    font-size: 1.5em;
+    color: white;
+    animation-name: ${SideMenuAnimation};
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    ` : styled.div`
     width: 250px;
     height: 100%;
     background-color: #5a8d96;
@@ -28,13 +41,7 @@ const SideMenu = props => {
     animation-name: ${SideMenuAnimation};
     animation-duration: 8s;
     animation-iteration-count: infinite;
-    @media (max-width: 1085px) {
-        width: 100%;
-        height: 40px;
-        display: flex;
-        justify-content: space-between;
-      }
-    `
+    `)
         :
         styled.div`
     width: 50px;
@@ -43,15 +50,9 @@ const SideMenu = props => {
     transition: width 2s;
     font-size: 1.5em;
     color: white;
-    @media (max-width: 1085px) {
-        width: 100%;
-        height: 40px;
-        display: flex;
-        justify-content: space-between;
-      }
     `;
 
-    const ExpandOrShrinkButton = styled.button`
+    const ExpandOrShrinkButton = isMobile ? "" : styled.button`
     background-color: transparent;
     color: white;
     border: 0px;
@@ -60,23 +61,24 @@ const SideMenu = props => {
     &:hover {
         cursor: pointer;
       }
-    @media (max-width: 1085px) {
-        display:none;
-      }
     `;
 
-    const SideMenuList = styled.ul`
+    const SideMenuList = isMobile ? styled.ul`
     appearance: none;
     list-style-type: none;
     color: white;
     margin: 0px;
     padding: 15px;
-    @media (max-width: 1085px) {
-        display: flex;
-        justify-content: space-between;
-        width: 80%;
-      }
-    `;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    ` : styled.ul`
+    appearance: none;
+    list-style-type: none;
+    color: white;
+    margin: 0px;
+    padding: 15px;
+    ` ;
 
     const SideMenuListElement = styled.li`
     appearance: none;
