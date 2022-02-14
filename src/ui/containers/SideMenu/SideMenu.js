@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useState } from "react";
+import React from "react";
 import { FaListUl, FaOutdent } from "react-icons/fa";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import * as actions from "../../../state/actions/index";
 
 
 const SideMenu = props => {
-    const [expanded, setExpanded] = useState(true);
+    const { expanded, setExpanded } = props;
 
     const isMobile = props.IsMobile;
 
@@ -22,8 +22,8 @@ const SideMenu = props => {
 
     const SideMenuContainer = expanded ? (isMobile ? styled.div`
     background-color: #5a8d96;
-    transition: width 2s;
-    font-size: 1.5em;
+    transition: all .2s ease-in-out;
+    font-size: 1.1em;
     color: white;
     animation-name: ${SideMenuAnimation};
     animation-duration: 8s;
@@ -36,7 +36,7 @@ const SideMenu = props => {
     width: 250px;
     height: 100%;
     background-color: #5a8d96;
-    transition: width 2s;
+    transition: all .2s ease-in-out;
     font-size: 1.5em;
     color: white;
     animation-name: ${SideMenuAnimation};
@@ -48,9 +48,14 @@ const SideMenu = props => {
     width: 50px;
     height: 100%;
     background-color: #5a8d96;
-    transition: width 2s;
+    transition: all .2s ease-in-out;
     font-size: 1.5em;
     color: white;
+    `;
+
+    const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: flex-end;
     `;
 
     const ExpandOrShrinkButton = isMobile ?
@@ -69,8 +74,8 @@ const SideMenu = props => {
     background-color: transparent;
     color: white;
     border: 0px;
-    width: 100%;
     font-size: 1.5em;
+    right: 0px;
     &:hover {
         cursor: pointer;
       }
@@ -95,12 +100,20 @@ const SideMenu = props => {
     const SideMenuListElement = styled.li`
     appearance: none;
     color: white;
+    transition: all .2s ease-in-out;
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
+        text-shadow: 2px 2px 5px black;
       }
     `;
 
-    const SideMenuLinkContent = styled.span`
+    const SideMenuLinkContent = expanded ? styled.span`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    ` :
+        styled.span`
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -109,17 +122,25 @@ const SideMenu = props => {
 
     return (
         <SideMenuContainer>
-            <ExpandOrShrinkButton onClick={() => setExpanded(!expanded)}>
-                {expanded ? <FaOutdent /> : <FaListUl />}
-            </ExpandOrShrinkButton>
+            <ButtonContainer>
+                <ExpandOrShrinkButton onClick={() => setExpanded(!expanded)}>
+                    {expanded ? <FaOutdent /> : <FaListUl />}
+                </ExpandOrShrinkButton>
+            </ButtonContainer>
             <SideMenuList>
                 {props.Sitemap.map((x, index) =>
                     <SideMenuListElement key={"li" + index}>
                         <Link to={x.Url}>
-                            <SideMenuLinkContent>
-                                {x.IconElement}
-                                {expanded ? x.Title : ""}
-                            </SideMenuLinkContent>
+                            {expanded ?
+                                <SideMenuLinkContent>
+                                    {x.IconElement}
+                                    &nbsp;&nbsp;
+                                    {x.Title}
+                                </SideMenuLinkContent>
+                                :
+                                <SideMenuLinkContent>
+                                    {x.IconElement}
+                                </SideMenuLinkContent>}
                         </Link>
                     </SideMenuListElement>)}
             </SideMenuList>

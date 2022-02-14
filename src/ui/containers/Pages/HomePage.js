@@ -1,14 +1,13 @@
-import styled from "@emotion/styled";
 import React from "react";
-
-const Page = styled.div`
-`;
+import Page from "./Page";
 
 const HomePage = props => {
 
     return (
         <Page>
-            Home
+            <p>
+                Ovo je početna stranica.
+            </p>
         </Page>
     );
 };

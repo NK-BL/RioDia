@@ -1,16 +1,13 @@
-import styled from "@emotion/styled";
 import React from "react";
-
-const Page = styled.div`
-    width: 100%;
-    height: 100%;
-`;
+import Page from "./Page";
 
 const ContactPage = props => {
 
     return (
         <Page>
-            <h1>ContactPage</h1>
+            <p>
+                Ovdje će biti kontakt (telefon, e-mail...).
+            </p>
         </Page>
     );
 };

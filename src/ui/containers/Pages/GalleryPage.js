@@ -1,13 +1,22 @@
+import styled from "@emotion/styled";
 import React from "react";
-import image from "../../../assets/images/299415083.jpg";
+import ImageSlider from "../../components/ImageSlider/ImageSlider";
+import Page from "./Page";
 
 const GalleryPage = props => {
 
+    const Gallery = styled.div`
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    `;
+
     return (
-        <div>
-            GalleryPage
-            <img src={image} alt="sliiba"></img>
-        </div>
+        <Page>
+            <Gallery>
+                <ImageSlider sideMenuExpanded={props.sideMenuExpanded} />
+            </Gallery>
+        </Page>
     );
 };
 

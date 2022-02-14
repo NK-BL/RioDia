@@ -24,6 +24,16 @@ const SiteMapList = [
     },
     {
         Id: 3,
+        Title: "Location",
+        Description: "LocationPage",
+        Url: "Location",
+        ComponentName: "LocationPage",
+        ParentId: null,
+        DisplaySequence: "40",
+        IconElement: <FaMap />,
+    },
+    {
+        Id: 4,
         Title: "Contact",
         Description: "ContactPage",
         Url: "Contact",
@@ -32,16 +42,6 @@ const SiteMapList = [
         DisplaySequence: "30",
         IconElement: <FaPhone />,
     },
-    {
-        Id: 3,
-        Title: "Location",
-        Description: "LocationPage",
-        Url: "Location",
-        ComponentName: "LocationPage",
-        ParentId: null,
-        DisplaySequence: "40",
-        IconElement: <FaMap />,
-    }
 ];
 
 export default SiteMapList;

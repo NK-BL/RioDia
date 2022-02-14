@@ -4,7 +4,7 @@ import * as actionType from "../actionTypes/actionTypes";
 
 const initialState = {
     Sitemap: [],
-    IsMobile: window.innerWidth < window.innerHeight
+    IsMobile: window.innerWidth < window.innerHeight,
 };
 
 const layoutReducer = (state = initialState, action = "") => {
@@ -16,9 +16,8 @@ const layoutReducer = (state = initialState, action = "") => {
             });
 
         case actionType.DETECT_DEVICE_TYPE:
-            console.log("ridjuser detekt dt");
             return updateObject(state, {
-                IsMobile: services.helperService.detectMobileDevice,
+                IsMobile: services.helperService.detectMobileDevice(),
             });
 
         default:

@@ -1,11 +1,14 @@
 import React from "react";
+import Page from "./Page";
 
 const LocationPage = props => {
 
     return (
-        <div>
-            LocationPage
-        </div>
+        <Page>
+            <p>
+                Ovdje će biti označena lokacija na mapi.
+            </p>
+        </Page>
     );
 };
 
