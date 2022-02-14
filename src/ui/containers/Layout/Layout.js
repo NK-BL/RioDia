@@ -112,13 +112,13 @@ display: flex;
                         </BookingAndAirbnbContainer>
                     </HeaderLogoContainer>
                     <LanguageFlagsContainer>
-                        <a target="_blank" rel="noreferrer" title="English">
+                        <a target="_blank" rel="noreferrer" href="#" title="English">
                             <HeaderLogo src={UkFlagLogo}></HeaderLogo>
                         </a>
-                        <a target="_blank" rel="noreferrer" title="Deutsch">
+                        <a target="_blank" rel="noreferrer" href="#" title="Deutsch">
                             <HeaderLogo src={DeFlagLogo}></HeaderLogo>
                         </a>
-                        <a target="_blank" rel="noreferrer" title="Hrvatski">
+                        <a target="_blank" rel="noreferrer" href="#" title="Hrvatski">
                             <HeaderLogo src={HrFlagLogo}></HeaderLogo>
                         </a>
                     </LanguageFlagsContainer>
