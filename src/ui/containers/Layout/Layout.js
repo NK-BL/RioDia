@@ -112,15 +112,15 @@ display: flex;
                         </BookingAndAirbnbContainer>
                     </HeaderLogoContainer>
                     <LanguageFlagsContainer>
-                        <a target="_blank" rel="noreferrer" href="#" title="English">
-                            <HeaderLogo src={UkFlagLogo}></HeaderLogo>
-                        </a>
-                        <a target="_blank" rel="noreferrer" href="#" title="Deutsch">
-                            <HeaderLogo src={DeFlagLogo}></HeaderLogo>
-                        </a>
-                        <a target="_blank" rel="noreferrer" href="#" title="Hrvatski">
-                            <HeaderLogo src={HrFlagLogo}></HeaderLogo>
-                        </a>
+                        {/* <a target="_blank" rel="noreferrer" href="#" title="English"> */}
+                        <HeaderLogo src={UkFlagLogo}></HeaderLogo>
+                        {/* </a> */}
+                        {/* <a target="_blank" rel="noreferrer" href="#" title="Deutsch"> */}
+                        <HeaderLogo src={DeFlagLogo}></HeaderLogo>
+                        {/* </a> */}
+                        {/* <a target="_blank" rel="noreferrer" href="#" title="Hrvatski"> */}
+                        <HeaderLogo src={HrFlagLogo}></HeaderLogo>
+                        {/* </a> */}
                     </LanguageFlagsContainer>
                 </Header>
                 <ContentPanel sideMenuExpanded={sideMenuExpanded} />
