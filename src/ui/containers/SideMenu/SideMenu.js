@@ -64,7 +64,6 @@ const SideMenu = props => {
     color: white;
     border: 0px;
     width: 100%;
-    font-size: 1.5em;
     &:hover {
         cursor: pointer;
       }
@@ -74,7 +73,7 @@ const SideMenu = props => {
     background-color: transparent;
     color: white;
     border: 0px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     right: 0px;
     &:hover {
         cursor: pointer;

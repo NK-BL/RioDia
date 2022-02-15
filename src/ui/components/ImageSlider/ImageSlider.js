@@ -2,16 +2,16 @@ import React from "react";
 import SimpleImageSlider from "react-simple-image-slider";
 
 const images = [
+    { url: "images/299415146.jpg" },
+    { url: "images/299415167.jpg" },
+    { url: "images/299415211.jpg" },
+    { url: "images/299415213.jpg" },
     { url: "images/299415083.jpg" },
     { url: "images/299415090.jpg" },
     { url: "images/299415091.jpg" },
     { url: "images/299415099.jpg" },
     { url: "images/299415111.jpg" },
     { url: "images/299415141.jpg" },
-    { url: "images/299415146.jpg" },
-    { url: "images/299415167.jpg" },
-    { url: "images/299415211.jpg" },
-    { url: "images/299415213.jpg" },
     { url: "images/299415238.jpg" },
     { url: "images/299415245.jpg" },
     { url: "images/299634439.jpg" },
