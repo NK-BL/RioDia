@@ -61,8 +61,8 @@ background-color: #d3f0f5;
 `;
 
     const HeaderLogo = styled.img`
-padding-left: 10px;
 height: 30px;
+padding-left: 5px;
 transition: all .2s ease-in-out;
 &:hover {
     transform: scale(1.1);
@@ -75,17 +75,30 @@ transition: all .2s ease-in-out;
     align-items: center;
     width: 15%;
     justify-content: space-between;
+    height: 35px;
 `;
 
     const LanguageFlagsContainer = styled.div`
 display: flex;
 align-items: center;
+height: 15px;
 // width: 25%;
 // height: 20px;
 justify-content: space-between;
 padding-right: 15px;
 padding-top: 5px;
 padding-bottom: 5px;
+`;
+
+
+    const LanguageFlagLogo = styled.img`
+height: 15px;
+padding-left: 5px;
+transition: all .2s ease-in-out;
+&:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
 `;
 
     const BookingAndAirbnbContainer = styled.span`
@@ -113,13 +126,13 @@ display: flex;
                     </HeaderLogoContainer>
                     <LanguageFlagsContainer>
                         {/* <a target="_blank" rel="noreferrer" href="#" title="English"> */}
-                        <HeaderLogo src={UkFlagLogo}></HeaderLogo>
+                        <LanguageFlagLogo src={UkFlagLogo}></LanguageFlagLogo>
                         {/* </a> */}
                         {/* <a target="_blank" rel="noreferrer" href="#" title="Deutsch"> */}
-                        <HeaderLogo src={DeFlagLogo}></HeaderLogo>
+                        <LanguageFlagLogo src={DeFlagLogo}></LanguageFlagLogo>
                         {/* </a> */}
                         {/* <a target="_blank" rel="noreferrer" href="#" title="Hrvatski"> */}
-                        <HeaderLogo src={HrFlagLogo}></HeaderLogo>
+                        <LanguageFlagLogo src={HrFlagLogo}></LanguageFlagLogo>
                         {/* </a> */}
                     </LanguageFlagsContainer>
                 </Header>

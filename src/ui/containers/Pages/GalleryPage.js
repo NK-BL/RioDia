@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
+import { connect } from "react-redux";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import Page from "./Page";
 
@@ -14,10 +15,16 @@ const GalleryPage = props => {
     return (
         <Page>
             <Gallery>
-                <ImageSlider sideMenuExpanded={props.sideMenuExpanded} />
+                <ImageSlider sideMenuExpanded={props.sideMenuExpanded} IsMobile={props.IsMobile} />
             </Gallery>
         </Page>
     );
 };
 
-export default GalleryPage;
+const mapStateToProps = (state) => {
+    return {
+        IsMobile: state.layout.IsMobile,
+    };
+};
+
+export default connect(mapStateToProps, null)(GalleryPage);

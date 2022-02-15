@@ -31,8 +31,9 @@ const ImageSlider = props => {
 
     return (
         <SimpleImageSlider
-            width={props.sideMenuExpanded ? window.innerWidth - 400 : window.innerWidth - 400}
-            height={props.sideMenuExpanded ? parseFloat((window.innerWidth - 400)) / 1.78 : parseFloat((window.innerWidth - 400)) / 1.78}
+            width={props.IsMobile ?
+                (window.innerWidth - 100) : (props.sideMenuExpanded ? window.innerWidth - 400 : window.innerWidth - 400)}
+            height={props.IsMobile ? (parseFloat((window.innerWidth - 100)) / 1.78) : (props.sideMenuExpanded ? parseFloat((window.innerWidth - 400)) / 1.78 : parseFloat((window.innerWidth - 400)) / 1.78)}
             images={images}
             showBullets={true}
             showNavs={true}

@@ -3,7 +3,6 @@ import React from "react";
 import { FaListUl, FaOutdent } from "react-icons/fa";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { keyframes } from 'styled-components';
 import * as actions from "../../../state/actions/index";
 
 
@@ -12,22 +11,11 @@ const SideMenu = props => {
 
     const isMobile = props.IsMobile;
 
-    const SideMenuAnimation = keyframes`
-    0% { width: 50px; }
-    25% { width: 100px; opacity: 0.25; }
-    50% { width: 150px; opacity: 0.5; }
-    75% { width: 200px; opacity: 0.75; }
-    100% { width: 250px; opacity: 1; }
-   `;
-
     const SideMenuContainer = expanded ? (isMobile ? styled.div`
     background-color: #5a8d96;
     transition: all .2s ease-in-out;
-    font-size: 1.1em;
+    font-size: 1em;
     color: white;
-    animation-name: ${SideMenuAnimation};
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
     width: 100%;
     height: 40px;
     display: flex;
@@ -39,9 +27,6 @@ const SideMenu = props => {
     transition: all .2s ease-in-out;
     font-size: 1.5em;
     color: white;
-    animation-name: ${SideMenuAnimation};
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
     `)
         :
         styled.div`
@@ -53,27 +38,22 @@ const SideMenu = props => {
     color: white;
     `;
 
-    const ButtonContainer = styled.div`
+    const ButtonContainer = isMobile ? styled.div`
+    display: none;
+    ` : styled.div`
     display: flex;
     justify-content: flex-end;
     `;
 
     const ExpandOrShrinkButton = isMobile ?
         styled.button`
-    background-color: transparent;
-    color: white;
-    border: 0px;
-    width: 100%;
-    &:hover {
-        cursor: pointer;
-      }
-    display: none
+    display: none;
     `
         : styled.button`
     background-color: transparent;
     color: white;
     border: 0px;
-    font-size: 1.2em;
+    font-size: 1em;
     right: 0px;
     &:hover {
         cursor: pointer;
@@ -86,8 +66,14 @@ const SideMenu = props => {
     color: white;
     margin: 0px;
     display: flex;
-    justify-content: space-between;
-    width: 90%;
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 0.8em;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
     ` : styled.ul`
     appearance: none;
     list-style-type: none;
@@ -100,32 +86,28 @@ const SideMenu = props => {
     appearance: none;
     color: white;
     transition: all .2s ease-in-out;
+    margin-bottom: 20px;
     &:hover {
         transform: scale(1.1);
         text-shadow: 2px 2px 5px black;
       }
     `;
 
-    const SideMenuLinkContent = expanded ? styled.span`
+    const SideMenuLinkContent = styled.span`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 20px;
-    ` :
-        styled.span`
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     `;
+
 
     return (
         <SideMenuContainer>
-            <ButtonContainer>
+            {!isMobile ? <ButtonContainer>
                 <ExpandOrShrinkButton onClick={() => setExpanded(!expanded)}>
                     {expanded ? <FaOutdent /> : <FaListUl />}
                 </ExpandOrShrinkButton>
-            </ButtonContainer>
+            </ButtonContainer> : ""}
             <SideMenuList>
                 {props.Sitemap.map((x, index) =>
                     <SideMenuListElement key={"li" + index}>
